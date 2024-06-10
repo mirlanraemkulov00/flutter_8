@@ -92,7 +92,7 @@ class _Screen4State extends State<Screen4> {
               keyboardType: TextInputType.number,
             ),
             TextField(
-              decoration: InputDecoration(hintText: 'Введите число 1'),
+              decoration: InputDecoration(hintText: 'Введите число 2'),
               controller: controller2,
               keyboardType: TextInputType.number,
             ),
