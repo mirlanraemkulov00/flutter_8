@@ -34,7 +34,6 @@ class _Screen4State extends State<Screen4> {
   TextEditingController controller1 = TextEditingController();
   TextEditingController controller2 = TextEditingController();
 
-  
   void add() {
     num1 = int.parse(controller1.text);
     num2 = int.parse(controller2.text);
@@ -60,7 +59,7 @@ class _Screen4State extends State<Screen4> {
     num2 = int.parse(controller2.text);
 
     setState(() {
-      sum =  num1 / num2;
+      sum = num1 / num2;
     });
   }
 
@@ -69,7 +68,7 @@ class _Screen4State extends State<Screen4> {
     num2 = int.parse(controller2.text);
 
     setState(() {
-      sum =  num1 * num2;
+      sum = num1 * num2;
     });
   }
 
@@ -85,7 +84,6 @@ class _Screen4State extends State<Screen4> {
         padding: const EdgeInsets.all(8.0),
         child: Column(
           children: [
-            
             TextField(
               decoration: InputDecoration(hintText: 'Введите число 1'),
               controller: controller1,
@@ -96,21 +94,28 @@ class _Screen4State extends State<Screen4> {
               controller: controller2,
               keyboardType: TextInputType.number,
             ),
-            ElevatedButton(
-              onPressed: add,
-              child: Text('+'),
-            ),
-            ElevatedButton(
-              onPressed: sub,
-              child: Text('-'),
-            ),
-            ElevatedButton(
-              onPressed: mul,
-              child: Text('/'),
-            ),
-            ElevatedButton(
-              onPressed: div,
-              child: Text('*'),
+            Padding(
+              padding: const EdgeInsets.all(40),
+              child: Row(
+                children: [
+                  ElevatedButton(
+                    onPressed: add,
+                    child: Text('+'),
+                  ),
+                  ElevatedButton(
+                    onPressed: sub,
+                    child: Text('-'),
+                  ),
+                  ElevatedButton(
+                    onPressed: mul,
+                    child: Text('/'),
+                  ),
+                  ElevatedButton(
+                    onPressed: div,
+                    child: Text('*'),
+                  ),
+                ],
+              ),
             ),
             Text(
               ''' Ответ = ${sum == null ? 0 : sum} ''',
@@ -124,6 +129,4 @@ class _Screen4State extends State<Screen4> {
       ),
     );
   }
-
-  
 }
